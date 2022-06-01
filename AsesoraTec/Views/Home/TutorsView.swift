@@ -11,7 +11,6 @@ import SwiftUI
 
 struct TutorsView: View {
     @ObservedObject var viewModel = ViewModel()
-    @State private var showTutorsForm = false
     
     let columns = [
         GridItem()
@@ -34,17 +33,6 @@ struct TutorsView: View {
 
             }
             .navigationTitle("AsesoraTec")
-            .toolbar {
-                Button {
-                    showTutorsForm = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            .sheet(isPresented: $showTutorsForm) {
-                TutorsFormView()
-                    .environmentObject(viewModel)
-            }
         }
     }
     
