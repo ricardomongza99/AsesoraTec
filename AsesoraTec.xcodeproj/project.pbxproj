@@ -106,8 +106,8 @@
 				8C0CC56E2847DEF1002E80D5 /* TutorsFormView.swift */,
 				8C0CC56F2847DEF1002E80D5 /* Components */,
 				8C0CC5712847DEF1002E80D5 /* TutorsViewModel.swift */,
-				8C0CC5722847DEF1002E80D5 /* TutorView.swift */,
 				8C0CC5732847DEF1002E80D5 /* TutorsView.swift */,
+				8C0CC5722847DEF1002E80D5 /* TutorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
