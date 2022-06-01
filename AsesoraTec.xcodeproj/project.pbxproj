@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				8C0CC56F2847DEF1002E80D5 /* Components */,
-				8C0CC5712847DEF1002E80D5 /* TutorsViewModel.swift */,
 				8C0CC5732847DEF1002E80D5 /* TutorsView.swift */,
+				8C0CC5712847DEF1002E80D5 /* TutorsViewModel.swift */,
 				8C9D8F742848089600D8BEE6 /* TutorDetailView.swift */,
 			);
 			path = Home;
