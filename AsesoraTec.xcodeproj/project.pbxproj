@@ -22,6 +22,7 @@
 		8C9D8F672847FB9300D8BEE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9D8F662847FB9300D8BEE6 /* FirebaseAuth */; };
 		8C9D8F692847FB9300D8BEE6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9D8F682847FB9300D8BEE6 /* FirebaseFirestore */; };
 		8C9D8F6B2847FB9300D8BEE6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9D8F6A2847FB9300D8BEE6 /* FirebaseFirestoreSwift */; };
+		8C9D8F71284807B600D8BEE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8F70284807B600D8BEE6 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		8C0CC5732847DEF1002E80D5 /* TutorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorsView.swift; sourceTree = "<group>"; };
 		8C0CC57A2847DEFC002E80D5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8C9D8F4B2847E54100D8BEE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C9D8F70284807B600D8BEE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0CC55C2847DE9A002E80D5 /* AsesoraTecApp.swift */,
+				8C9D8F70284807B600D8BEE6 /* ContentView.swift */,
 				8C0CC56A2847DEBE002E80D5 /* Models */,
 				8C0CC56D2847DEF1002E80D5 /* Views */,
 				8C0CC5792847DEFC002E80D5 /* Extensions */,
@@ -213,6 +216,7 @@
 				8C0CC5762847DEF1002E80D5 /* TutorsViewModel.swift in Sources */,
 				8C0CC57B2847DEFC002E80D5 /* UIViewController+Extensions.swift in Sources */,
 				8C0CC55D2847DE9A002E80D5 /* AsesoraTecApp.swift in Sources */,
+				8C9D8F71284807B600D8BEE6 /* ContentView.swift in Sources */,
 				8C0CC5772847DEF1002E80D5 /* TutorView.swift in Sources */,
 				8C0CC5742847DEF1002E80D5 /* TutorsFormView.swift in Sources */,
 				8C0CC5782847DEF1002E80D5 /* TutorsView.swift in Sources */,
