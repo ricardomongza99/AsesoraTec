@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - BODY
 
 struct TutorsView: View {
-    @StateObject var viewModel = ViewModel()
+    @ObservedObject var viewModel = ViewModel()
     @State private var showTutorsForm = false
     
     let columns = [
@@ -46,6 +46,10 @@ struct TutorsView: View {
                     .environmentObject(viewModel)
             }
         }
+    }
+    
+    init() {
+        viewModel.getData()
     }
 }
 
