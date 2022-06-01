@@ -103,7 +103,7 @@ struct TutorsFormView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        let tutor = Tutor(name: name, phone: phone, courses: courses, availability: availability, price: price)
+                        let tutor = Tutor(name: name, phone: phone, courses: courses, major: "test",  availability: availability, price: price)
                         viewModel.tutors.append(tutor)
                         dismiss()
                     }
