@@ -10,106 +10,69 @@ import SwiftUI
 // MARK: - BODY
 
 struct ProfileView: View {
-    @State private var name = ""
-    @State private var courses = [String]()
-    @State private var price = 0.0
-    @State private var availability = ""
-    @State private var phone = ""
+    
+    @ObservedObject var viewModel = ViewModel()
     
     private var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         return formatter
     }()
-    
-    /// Checks if all fields have been filled
-    private var addButtonDisabled: Bool {
-        let fields = [name, availability, phone]
-        for field in fields {
-            if field.isEmpty {
-                return true
-            }
-        }
-        return courses.isEmpty
-    }
-    
-    @Environment(\.dismiss) var dismiss
-    
+        
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    TextField("Name", text: $name)
-                } header: {
-                    Text("🤓 Profile")
+                Section("🤓 Profile") {
+                    TextField("Name", text: $viewModel.name)
+                    TextField("Major", text: $viewModel.major)
                 }
                 
-                Section {
-                    ForEach(0..<courses.count, id: \.self) { index in
-                        TextField("Course", text: $courses[index])
+                Section("📚 Courses") {
+                    ForEach(0..<viewModel.courses.count, id: \.self) { index in
+                        TextField("Course", text: $viewModel.courses[index])
                     }
                     .onDelete(perform: delete)
                     
-                    Button {
-                        courses.append("")
-                    } label: {
-                        HStack(spacing: 16) {
-                            Image(systemName: "plus.circle.fill")
-                                .foregroundColor(.green)
-                            Text("add course")
-                                .font(.callout)
-                        }
-                    }
-                    .buttonStyle(.plain)
-
-                } header: {
-                    Text("📚 Courses")
+                    addCourseButton
                 }
                 
-                Section {
-                    TextField("Price per hour", value: $price, formatter: formatter)
+                Section("💵 Price per hour") {
+                    TextField("Price per hour", value: $viewModel.price, formatter: formatter)
                         .keyboardType(.decimalPad)
-                } header: {
-                    Text("💵 Price per hour")
-                } footer: {
-                    Text("This is the price per 1 hour session.")
                 }
                 
-                Section {
-                    TextEditor(text: $availability)
-                } header: {
-                    Text("🕐 Availabilty")
+                Section("🕐 Availabilty") {
+                    TextEditor(text: $viewModel.availability)
                 }
                 
-                Section {
-                    TextField("Phone number", text: $phone)
+                Section("📱 MOBILE") {
+                    TextField("Phone number", text: $viewModel.phone)
                         .keyboardType(.numberPad)
-                } header: {
-                    Text("📱 MOBILE")
                 }
             }
             .listStyle(.grouped)
             .navigationTitle("Profile")
-            .animation(.default, value: courses)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        print("Save data")
-                    }
-                    .disabled(addButtonDisabled)
+            .animation(.default, value: viewModel.courses)
+            .toolbar(content: {
+                Button("Save") {
+                    viewModel.saveButtonPressed()
                 }
-            }
+                .disabled(viewModel.saveButtonIsDisabled)
+            })
             .onTapGesture {
                 self.hideKeyboard()
             }
         }
     }
     
-    // MARK: - FUNCTIONS
-    
     private func delete(at offsets: IndexSet) {
-        courses.remove(atOffsets: offsets)
+        viewModel.courses.remove(atOffsets: offsets)
     }
+    
+    init() {
+        viewModel.getTutor()
+    }
+
 }
 
 // MARK: - PREVIEWS
@@ -117,5 +80,24 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+    }
+}
+
+// MARK: - COMPONENTS
+
+extension ProfileView {
+    
+    private var addCourseButton: some View {
+        Button {
+            viewModel.courses.append("")
+        } label: {
+            HStack(spacing: 16) {
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(.green)
+                Text("add course")
+                    .font(.callout)
+            }
+        }
+        .buttonStyle(.plain)
     }
 }

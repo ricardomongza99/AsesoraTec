@@ -24,6 +24,7 @@
 		8C9D8F752848089600D8BEE6 /* TutorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8F742848089600D8BEE6 /* TutorDetailView.swift */; };
 		8C9D8F7728480C0900D8BEE6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8F7628480C0900D8BEE6 /* ProfileView.swift */; };
 		8C9D8F792848134D00D8BEE6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8F782848134D00D8BEE6 /* View+Extensions.swift */; };
+		8C9D8F7B2848141800D8BEE6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8F7A2848141800D8BEE6 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		8C9D8F742848089600D8BEE6 /* TutorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDetailView.swift; sourceTree = "<group>"; };
 		8C9D8F7628480C0900D8BEE6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8C9D8F782848134D00D8BEE6 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		8C9D8F7A2848141800D8BEE6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9D8F7628480C0900D8BEE6 /* ProfileView.swift */,
+				8C9D8F7A2848141800D8BEE6 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				8C9D8F752848089600D8BEE6 /* TutorDetailView.swift in Sources */,
 				8C0CC5762847DEF1002E80D5 /* TutorsViewModel.swift in Sources */,
 				8C0CC57B2847DEFC002E80D5 /* UIViewController+Extensions.swift in Sources */,
+				8C9D8F7B2848141800D8BEE6 /* ProfileViewModel.swift in Sources */,
 				8C0CC55D2847DE9A002E80D5 /* AsesoraTecApp.swift in Sources */,
 				8C9D8F71284807B600D8BEE6 /* ContentView.swift in Sources */,
 				8C0CC5782847DEF1002E80D5 /* TutorsView.swift in Sources */,
