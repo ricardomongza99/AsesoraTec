@@ -46,7 +46,7 @@ struct TutorView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("\(tutor.emoji ?? "") \(tutor.name)")
+        .navigationTitle(tutor.name)
         .navigationBarTitleDisplayMode(.inline)
     }
     

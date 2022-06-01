@@ -14,7 +14,6 @@ struct TutorsFormView: View {
     @EnvironmentObject var viewModel: TutorsView.ViewModel
     
     @State private var name = ""
-    @State private var emoji = ""
     @State private var courses = [String]()
     @State private var price = 0.0
     @State private var availability = ""
@@ -28,7 +27,7 @@ struct TutorsFormView: View {
     
     /// Checks if all fields have been filled
     private var addButtonDisabled: Bool {
-        let fields = [name, emoji, availability, phone]
+        let fields = [name, availability, phone]
         for field in fields {
             if field.isEmpty {
                 return true
@@ -44,7 +43,6 @@ struct TutorsFormView: View {
             List {
                 Section {
                     TextField("Name", text: $name)
-                    TextField("Emoji", text: $emoji)
                 } header: {
                     Text("🤓 Profile")
                 }
@@ -105,8 +103,7 @@ struct TutorsFormView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        let emoji = emoji.isEmpty ? nil : "\(emoji.first!)"
-                        let tutor = Tutor(name: name, emoji: emoji, phone: phone, courses: courses, availability: availability, price: price)
+                        let tutor = Tutor(name: name, phone: phone, courses: courses, availability: availability, price: price)
                         viewModel.tutors.append(tutor)
                         dismiss()
                     }

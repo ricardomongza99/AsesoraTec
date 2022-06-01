@@ -14,8 +14,9 @@ struct TutorCell: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            Text(tutor.emoji ?? "📚")
-                .font(.title)
+            Image("tec")
+                .resizable()
+                .frame(width: 60, height: 60)
             VStack(alignment: .leading, spacing: 8) {
                 Text(tutor.name)
                     .bold()
