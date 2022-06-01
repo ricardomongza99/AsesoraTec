@@ -13,11 +13,10 @@ extension TutorsView {
         
         @Published var tutors = [Tutor]()
         
+        let db = Firestore.firestore()
+        
         /// Get tutors data
         func getData() {
-            
-            let db = Firestore.firestore()
-            
             db.collection("tutors").getDocuments { snapshot, error in
                 if let error = error {
                     print("Error getting tutor documents: \(error.localizedDescription)")
