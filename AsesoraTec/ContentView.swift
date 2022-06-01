@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - BODY
+
 struct ContentView: View {
     var body: some View {
         TabView {
@@ -15,13 +17,15 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
         }
     }
 }
+
+// MARK: - PREVIEWS
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

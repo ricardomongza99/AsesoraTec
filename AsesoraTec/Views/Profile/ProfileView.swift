@@ -1,18 +1,15 @@
 //
-//  TutorsFormView.swift
+//  ProfileView.swift
 //  AsesoraTec
 //
-//  Created by Ricardo Montemayor on 03/05/22.
+//  Created by Ricardo Montemayor on 01/06/22.
 //
 
 import SwiftUI
 
 // MARK: - BODY
 
-struct TutorsFormView: View {
-    
-    @EnvironmentObject var viewModel: TutorsView.ViewModel
-    
+struct ProfileView: View {
     @State private var name = ""
     @State private var courses = [String]()
     @State private var price = 0.0
@@ -91,24 +88,19 @@ struct TutorsFormView: View {
                     Text("📱 MOBILE")
                 }
             }
-            .navigationTitle("Tutor")
-            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(.grouped)
+            .navigationTitle("Profile")
             .animation(.default, value: courses)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-                
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") {
-                        let tutor = Tutor(name: name, phone: phone, courses: courses, major: "test",  availability: availability, price: price)
-                        viewModel.tutors.append(tutor)
-                        dismiss()
+                    Button("Save") {
+                        print("Save data")
                     }
                     .disabled(addButtonDisabled)
                 }
+            }
+            .onTapGesture {
+                self.hideKeyboard()
             }
         }
     }
@@ -120,11 +112,10 @@ struct TutorsFormView: View {
     }
 }
 
-// MARK: - PREVIEW
+// MARK: - PREVIEWS
 
-struct TutorsFormView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorsFormView()
-            .environmentObject(TutorsView.ViewModel())
+        ProfileView()
     }
 }
