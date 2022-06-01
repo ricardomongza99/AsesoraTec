@@ -23,7 +23,7 @@ struct TutorsView: View {
                 LazyVStack(spacing: 16) {
                     ForEach(viewModel.tutors) { tutor in
                         NavigationLink {
-                            TutorView(tutor: tutor)
+                            TutorDetailView(tutor: tutor)
                         } label: {
                             TutorCell(tutor: tutor)
                         }

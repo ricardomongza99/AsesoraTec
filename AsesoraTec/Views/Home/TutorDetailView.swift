@@ -1,15 +1,13 @@
 //
-//  TutorView.swift
+//  TutorDetailView.swift
 //  AsesoraTec
 //
-//  Created by Ricardo Montemayor on 03/05/22.
+//  Created by Ricardo Montemayor on 01/06/22.
 //
 
 import SwiftUI
 
-// MARK: - BODY
-
-struct TutorView: View {
+struct TutorDetailView: View {
     var tutor: Tutor
     @State private var copiedOpacity = 0.0
     
@@ -49,17 +47,14 @@ struct TutorView: View {
         .navigationTitle(tutor.name)
         .navigationBarTitleDisplayMode(.inline)
     }
-    
 }
 
-// MARK: - PREVIEW
-
-struct TutorView_Previews: PreviewProvider {
+struct TutorDetailView_Previews: PreviewProvider {
     static let tutors = TutorAPI.getTutors()
 
     static var previews: some View {
         NavigationView {
-            TutorView(tutor: tutors[0])
+            TutorDetailView(tutor: tutors[0])
         }
     }
 }
