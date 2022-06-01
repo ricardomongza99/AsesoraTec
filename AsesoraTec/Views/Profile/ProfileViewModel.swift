@@ -96,7 +96,7 @@ extension ProfileView {
             
             do {
                 try docRef.setData(from: tutor)
-                self.getTutor()n
+                self.getTutor()
 
             } catch {
                 print("Could not encode tutor: \(error)")
