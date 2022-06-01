@@ -11,7 +11,6 @@ import SwiftUI
 
 struct TutorsView: View {
     @ObservedObject var viewModel = ViewModel()
-    @State private var showTutorsForm = false
     
     let columns = [
         GridItem()
@@ -23,7 +22,7 @@ struct TutorsView: View {
                 LazyVStack(spacing: 16) {
                     ForEach(viewModel.tutors) { tutor in
                         NavigationLink {
-                            TutorView(tutor: tutor)
+                            TutorDetailView(tutor: tutor)
                         } label: {
                             TutorCell(tutor: tutor)
                         }
@@ -34,17 +33,6 @@ struct TutorsView: View {
 
             }
             .navigationTitle("AsesoraTec")
-            .toolbar {
-                Button {
-                    showTutorsForm = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            .sheet(isPresented: $showTutorsForm) {
-                TutorsFormView()
-                    .environmentObject(viewModel)
-            }
         }
     }
     

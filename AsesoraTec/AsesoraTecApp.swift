@@ -22,7 +22,7 @@ struct AsesoraTecApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TutorsView()
+            ContentView()
         }
     }
 }
