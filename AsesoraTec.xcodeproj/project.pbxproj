@@ -106,11 +106,8 @@
 		8C0CC56D2847DEF1002E80D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C0CC56E2847DEF1002E80D5 /* TutorsFormView.swift */,
-				8C0CC56F2847DEF1002E80D5 /* Components */,
-				8C0CC5712847DEF1002E80D5 /* TutorsViewModel.swift */,
-				8C0CC5732847DEF1002E80D5 /* TutorsView.swift */,
-				8C0CC5722847DEF1002E80D5 /* TutorView.swift */,
+				8C9D8F722848082D00D8BEE6 /* Home */,
+				8C9D8F732848083500D8BEE6 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +126,25 @@
 				8C0CC57A2847DEFC002E80D5 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C9D8F722848082D00D8BEE6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8C0CC56F2847DEF1002E80D5 /* Components */,
+				8C0CC5712847DEF1002E80D5 /* TutorsViewModel.swift */,
+				8C0CC5732847DEF1002E80D5 /* TutorsView.swift */,
+				8C0CC5722847DEF1002E80D5 /* TutorView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8C9D8F732848083500D8BEE6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8C0CC56E2847DEF1002E80D5 /* TutorsFormView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
