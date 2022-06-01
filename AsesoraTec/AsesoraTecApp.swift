@@ -11,7 +11,7 @@ import SwiftUI
 struct AsesoraTecApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TutorsView()
         }
     }
 }
