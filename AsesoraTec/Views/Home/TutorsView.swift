@@ -32,6 +32,7 @@ struct TutorsView: View {
                 .padding()
 
             }
+            .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Image("logo")
@@ -46,7 +47,6 @@ struct TutorsView: View {
                     }
                 }
             }
-            .searchable(text: $viewModel.searchText)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
