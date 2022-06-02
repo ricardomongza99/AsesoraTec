@@ -13,19 +13,41 @@ struct TutorCell: View {
     var tutor: Tutor
     
     var body: some View {
-        HStack(spacing: 16) {
-            Image("tec")
-                .resizable()
-                .frame(width: 60, height: 60)
-            VStack(alignment: .leading, spacing: 8) {
-                Text(tutor.name)
+        VStack(alignment: .leading, spacing: 10) {
+            
+            HStack(alignment: .bottom,spacing: 8) {
+                Text(tutor.major)
+                    .font(.title)
                     .bold()
-                Text(tutor.coursesString)
-                    .font(.caption)
-                    .foregroundColor(Color.secondary)
+
+                
+                Spacer()
+                
+                Image("tec")
+                    .resizable()
+                    .frame(width: 32, height: 32)
             }
-            Spacer()
-            Text(tutor.priceString)
+            
+            Text(tutor.name)
+                .foregroundColor(.secondary)
+
+
+            VStack(alignment: .leading) {
+                ForEach(tutor.courses, id: \.self) { course in
+                    Text("• \(course)")
+                }
+            }
+            
+            HStack(spacing: 0) {
+                Spacer()
+                Text(tutor.priceString)
+                    .bold()
+                if tutor.price > 0 {
+                    Text(" / hr")
+                        .foregroundColor(.secondary)
+                }
+            }
+                
         }
         .padding()
         .background(Color.white)
@@ -40,7 +62,7 @@ struct TutorCell_Previews: PreviewProvider {
     static let tutors = TutorAPI.getTutors()
     
     static var previews: some View {
-        TutorCell(tutor: tutors[0])
+        TutorCell(tutor: tutors[1])
             .previewLayout(.sizeThatFits)
             .padding()
     }

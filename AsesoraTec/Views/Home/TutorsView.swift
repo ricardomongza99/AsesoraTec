@@ -19,7 +19,7 @@ struct TutorsView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack(spacing: 16) {
+                LazyVStack(spacing: 32) {
                     ForEach(viewModel.tutors) { tutor in
                         NavigationLink {
                             TutorDetailView(tutor: tutor)
