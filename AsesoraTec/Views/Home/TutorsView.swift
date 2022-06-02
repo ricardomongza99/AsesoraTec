@@ -20,7 +20,7 @@ struct TutorsView: View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 32) {
-                    ForEach(viewModel.tutors) { tutor in
+                    ForEach(viewModel.filteredTutors) { tutor in
                         NavigationLink {
                             TutorDetailView(tutor: tutor)
                         } label: {
@@ -46,6 +46,7 @@ struct TutorsView: View {
                     }
                 }
             }
+            .searchable(text: $viewModel.searchText)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

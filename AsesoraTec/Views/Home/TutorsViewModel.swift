@@ -12,6 +12,28 @@ extension TutorsView {
     class ViewModel: ObservableObject {
         
         @Published var tutors = [Tutor]()
+        @Published var searchText = ""
+        
+        var filteredTutors: [Tutor] {
+            if searchText.isEmpty {
+                return tutors
+            } else {
+                var filteredTutors = [Tutor]()
+                for tutor in tutors {
+                    if tutor.major.lowercased().contains(searchText.lowercased()) {
+                        filteredTutors.append(tutor)
+                        continue
+                    }
+                    for course in tutor.courses {
+                        if course.lowercased().contains(searchText.lowercased()) {
+                            filteredTutors.append(tutor)
+                            break
+                        }
+                    }
+                }
+                return filteredTutors
+            }
+        }
         
         let db = Firestore.firestore()
         
