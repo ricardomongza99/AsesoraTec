@@ -32,7 +32,11 @@ struct TutorsView: View {
                 .padding()
 
             }
-            .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(
+                text: $viewModel.searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search majors or courses"
+            )
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Image("logo")
