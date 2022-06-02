@@ -43,7 +43,7 @@ struct TutorDetailView: View {
                     .opacity(copiedOpacity)
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.grouped)
         .navigationTitle(tutor.name)
         .navigationBarTitleDisplayMode(.inline)
     }
