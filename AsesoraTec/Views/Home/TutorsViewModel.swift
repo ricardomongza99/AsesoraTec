@@ -17,6 +17,7 @@ extension TutorsView {
         
         /// Get tutors data
         func getData() {
+            tutors = []
             db.collection("tutors").getDocuments { snapshot, error in
                 if let error = error {
                     print("Error getting tutor documents: \(error.localizedDescription)")
