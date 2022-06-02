@@ -32,14 +32,21 @@ struct TutorsView: View {
                 .padding()
 
             }
-            .toolbar(content: {
-                Button {
-                    viewModel.getData()
-                } label: {
-                    Image(systemName: "arrow.clockwise")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                 }
-            })
-            .navigationTitle("AsesoraTec")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        viewModel.getData()
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
